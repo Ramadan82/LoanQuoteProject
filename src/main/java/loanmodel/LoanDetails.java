@@ -29,4 +29,12 @@ public class LoanDetails {
     public int getTermRequired() {
         return termRequired;
     }
+
+    public boolean hasEnoughAfterExpenditure(){
+        double totalAnnualIncome = this.getTotalAnnualIncome();
+        double annualExpenditure = this.getAnnualExpenditure();
+        double requiredAfterExpenditure = totalAnnualIncome * 0.25;
+        double balance = totalAnnualIncome - annualExpenditure;
+        return balance >= requiredAfterExpenditure;
+    }
 }
