@@ -1,0 +1,8 @@
+Go to project root where the pom.xml file is
+
+Run 'mvn clean install' to compile and test the code
+
+To run the program
+
+java -cp target/LoanQuote-1.0-SNAPSHOT.jar LoanTester
+

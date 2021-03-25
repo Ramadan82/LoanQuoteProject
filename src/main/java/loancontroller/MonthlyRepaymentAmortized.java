@@ -10,6 +10,7 @@ MonthlyRepaymentAmortized implements MonthlyRepayment {
 
     @Override
     public double monthlyRepaymentPlan(LoanDetails loanDetails, LoanCompany loanCompany) {
+        //Amortization Calculation Reference: https://www.vertex42.com/ExcelArticles/amortization-calculation.html
         double loanAmount = loanDetails.getLoanAmountRequired();
         double interestRate = loanCompany.getInterestRate();
        

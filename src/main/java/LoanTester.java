@@ -5,10 +5,10 @@ import repayment.MonthlyRepayment;
 
 import java.time.LocalDate;
 
-public class Main {
+public class LoanTester {
     public static void main(String[] args) {
         LoanDetails loanDetails = new LoanDetails(20000, 30000, 10000, 36);
-        LoanApplicant loanApplicant = new LoanApplicant("Harry", "William", LocalDate.of(2011, 10, 05), "UK");
+        LoanApplicant loanApplicant = new LoanApplicant("Harry", "William", LocalDate.of(1995, 10, 05), "UK");
         LoanAssessor assessor = new LoanAssessor();
         LoanCompany company = new LoanCompany("Zopa", 7.5, 12, 70);
         MonthlyRepayment monthlyRepayment = new MonthlyRepaymentAmortized();
@@ -26,7 +26,7 @@ public class Main {
             System.out.println("======================Payment Details==============================");
             double monthlyPayment = monthlyRepayment.monthlyRepaymentPlan(loanDetails, company);
             System.out.println("You will pay a total of : £"+(monthlyPayment * loanDetails.getTermRequired()));
-            System.out.println("You monthly payment is: £"+monthlyPayment);
+            System.out.println("Your monthly payment is: £"+monthlyPayment);
 
         }else{
             System.out.println("====================================================================");

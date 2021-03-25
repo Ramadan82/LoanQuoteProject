@@ -1,0 +1,7 @@
+loancontroller/LoanAssessor.class
+repayment/MonthlyRepayment.class
+LoanTester.class
+loanmodel/LoanCompany.class
+loanmodel/LoanDetails.class
+loanmodel/LoanApplicant.class
+loancontroller/MonthlyRepaymentAmortized.class

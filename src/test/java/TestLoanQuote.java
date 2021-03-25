@@ -9,7 +9,7 @@ import repayment.MonthlyRepayment;
 
 import java.time.LocalDate;
 
-public class LoanQuoteTester {
+public class TestLoanQuote {
 
     @Test
     public void testCalculateAge() {
