@@ -37,4 +37,12 @@ public class LoanDetails {
         double balance = totalAnnualIncome - annualExpenditure;
         return balance >= requiredAfterExpenditure;
     }
+
+    @Override
+    public String toString(){
+        return "You are applying for : £"+getLoanAmountRequired()+"\n" +
+                "Your total income is: £"+getTotalAnnualIncome()+"\n"+
+                "Your annual expenses is : £"+getAnnualExpenditure()+"\n"+
+                "and you want to pay in : "+getTermRequired()+" months";
+    }
 }

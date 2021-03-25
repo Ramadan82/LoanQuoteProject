@@ -1,8 +1,10 @@
 package loancontroller;
 import java.lang.Math;
-import repayment.MonthlyRepayment;
+import java.text.DecimalFormat;
 
 import loanmodel.*;
+import repayment.MonthlyRepayment;
+
 public class
 MonthlyRepaymentAmortized implements MonthlyRepayment {
 
@@ -10,10 +12,12 @@ MonthlyRepaymentAmortized implements MonthlyRepayment {
     public double monthlyRepaymentPlan(LoanDetails loanDetails, LoanCompany loanCompany) {
         double loanAmount = loanDetails.getLoanAmountRequired();
         double interestRate = loanCompany.getInterestRate();
+       
         double numberOfPayments = loanDetails.getTermRequired();
-        double a = (1 + interestRate);
+        double r = (interestRate/100) / 12;
+        double a = (1 + r);
 
-        double paymentAmountPerMonth = loanAmount * (interestRate * Math.pow(a, numberOfPayments) / Math.pow(a, numberOfPayments)-1);
-        return paymentAmountPerMonth;
+        double paymentAmountPerMonth = loanAmount *  (r * (Math.pow(a, numberOfPayments))) / (Math.pow(a, numberOfPayments)-1);
+        return Math.round(paymentAmountPerMonth * 100.0) / 100.0;
     }
 }
