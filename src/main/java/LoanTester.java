@@ -9,22 +9,30 @@ public class LoanTester {
     public static void main(String[] args) {
         LoanDetails loanDetails = new LoanDetails(20000, 30000, 10000, 36);
         LoanApplicant loanApplicant = new LoanApplicant("Harry", "William", LocalDate.of(1995, 10, 05), "UK");
-        LoanAssessor assessor = new LoanAssessor();
-        LoanCompany company = new LoanCompany("Zopa", 7.5, 12, 70);
+        LoanAssessor loanAssessor = new LoanAssessor();
+        LoanCompany loanCompany = new LoanCompany("Zopa", 7.5, 12, 70);
         MonthlyRepayment monthlyRepayment = new MonthlyRepaymentAmortized();
 
 
-        boolean isEntitled = assessor.isEntitled(loanDetails, loanApplicant);
+        boolean isEntitled = loanAssessor.isEntitled(loanDetails, loanApplicant);
 
-        System.out.println("======================Loan Application Details=============================");
+
+        System.out.println("=======================Loan Details==================================");
+        String loanCompanyName = loanCompany.getLoanCompanyNam();
+        String loanApplicantFirstNameName = loanApplicant.getFirstName();
+        String loanApplicantLastName = loanApplicant.getLastName();
+        System.out.println(loanApplicantFirstNameName + " " + loanApplicantLastName);
+
+        System.out.println("You are applying for a loan from " + loanCompanyName);
         System.out.println(loanDetails);
 
         System.out.println("\n");
 
 
         if(isEntitled){
+            System.out.println("You are qualified for the loan");
             System.out.println("======================Payment Details==============================");
-            double monthlyPayment = monthlyRepayment.monthlyRepaymentPlan(loanDetails, company);
+            double monthlyPayment = monthlyRepayment.monthlyRepaymentPlan(loanDetails, loanCompany);
             System.out.println("You will pay a total of : £"+(monthlyPayment * loanDetails.getTermRequired()));
             System.out.println("Your monthly payment is: £"+monthlyPayment);
 

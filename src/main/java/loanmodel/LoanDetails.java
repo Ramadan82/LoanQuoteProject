@@ -40,7 +40,7 @@ public class LoanDetails {
 
     @Override
     public String toString(){
-        return "You are applying for : £"+getLoanAmountRequired()+"\n" +
+        return "Loan amount requested  : £"+getLoanAmountRequired()+"\n" +
                 "Your total income is: £"+getTotalAnnualIncome()+"\n"+
                 "Your annual expenses is : £"+getAnnualExpenditure()+"\n"+
                 "and you want to pay in : "+getTermRequired()+" months";
