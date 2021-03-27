@@ -38,7 +38,7 @@ public class LoanTester {
 
         }else{
             System.out.println("====================================================================");
-            System.out.println("Sorry we cannot offer you a loan this time around");
+            System.out.println("Sorry you are not qualified. we cannot offer you the loan this time around");
         }
 
 
