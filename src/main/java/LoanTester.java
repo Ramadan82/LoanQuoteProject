@@ -1,4 +1,4 @@
-import loancontroller.LoanAssessor;
+import helper.LoanAssessor;
 import loancontroller.MonthlyRepaymentAmortized;
 import loanmodel.*;
 import repayment.MonthlyRepayment;
@@ -13,9 +13,7 @@ public class LoanTester {
         LoanCompany loanCompany = new LoanCompany("Zopa", 7.5, 12, 70);
         MonthlyRepayment monthlyRepayment = new MonthlyRepaymentAmortized();
 
-
-        boolean isEntitled = loanAssessor.isEntitled(loanDetails, loanApplicant);
-
+        boolean isEntitled = loanAssessor.isEntitled(loanDetails, loanApplicant, loanCompany);
 
         System.out.println("=======================Loan Details==================================");
         String loanCompanyName = loanCompany.getLoanCompanyNam();
@@ -40,7 +38,5 @@ public class LoanTester {
             System.out.println("====================================================================");
             System.out.println("Sorry you are not qualified. we cannot offer you the loan this time around");
         }
-
-
     }
 }

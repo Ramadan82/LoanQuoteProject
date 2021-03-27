@@ -2,14 +2,12 @@ package loanmodel;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.*;
 
 public class LoanApplicant {
     private final String firstName;
     private final String lastName;
     private final LocalDate dateOfBirth;
     private final String citizenship;
-
 
     public LoanApplicant(String firstName, String lastName, LocalDate dateOfBirth, String citizenship){
         this.firstName = firstName;
@@ -30,18 +28,14 @@ public class LoanApplicant {
         return dateOfBirth;
     }
 
-    public int calculateAge(LoanApplicant loanApplicant){
+    public int calculateAge(){
         LocalDate dob = this.getDateOfBirth();
         LocalDate currentDate = LocalDate.now();
         Period difference = Period.between(dob, currentDate);
-        int age = difference.getYears();
-        return age;
+        return difference.getYears();
     }
 
     public String getCitizenship() {
         return citizenship;
     }
-
-
-
 }

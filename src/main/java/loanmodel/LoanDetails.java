@@ -30,6 +30,10 @@ public class LoanDetails {
         return termRequired;
     }
 
+    /**
+     * The applicant must be left with at least 1/3 of annual income to be entitled
+     * @return whether the applicant has enough balance
+     */
     public boolean hasEnoughAfterExpenditure(){
         double totalAnnualIncome = this.getTotalAnnualIncome();
         double annualExpenditure = this.getAnnualExpenditure();
