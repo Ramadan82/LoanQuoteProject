@@ -10,8 +10,6 @@ import java.util.List;
 
 public class LoanTester {
     public static void main(String[] args) {
-        LoanDetails loanDetails = new LoanDetails(20000, 30000, 10000, 36);
-        LoanApplicant loanApplicant = new LoanApplicant("Harry", "William", LocalDate.of(1995, 10, 05), "UK");
         LoanCompany loanCompany1 = new LoanCompany("Zopa", 7.5, 12, 70);
         LoanCompany loanCompany2 = new LoanCompany("Monzo", 8.8, 1, 56);
         LoanCompany loanCompany3 = new LoanCompany("Barclays", 6.2, 12, 32);
@@ -22,6 +20,18 @@ public class LoanTester {
         companies.add(loanCompany2);
         companies.add(loanCompany3);
 
+        // Client 1
+        LoanDetails loanDetails1 = new LoanDetails(20000, 30000, 10000, 36);
+        LoanApplicant loanApplicant1 = new LoanApplicant("Harry", "William", LocalDate.of(1995, 10, 05), "UK");
+        loanSelect(loanDetails1, loanApplicant1, monthlyRepayment, companies);
+
+        // Client 2
+        LoanDetails loanDetails2 = new LoanDetails(15000, 20000, 10000, 36);
+        LoanApplicant loanApplicant2 = new LoanApplicant("Ramadan", "Isa", LocalDate.of(1989, 10, 05), "UK");
+        loanSelect(loanDetails2, loanApplicant2, monthlyRepayment, companies);
+    }
+
+    private static void loanSelect(LoanDetails loanDetails, LoanApplicant loanApplicant, MonthlyRepayment monthlyRepayment, List<LoanCompany> companies) {
         LoanCompany loanCompany = LoanSelector.selectBestLoan(companies, loanDetails, loanApplicant);
 
         System.out.println("=======================Loan Details==================================");
